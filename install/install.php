@@ -1,5 +1,6 @@
-﻿<?php
+<?php
 include "../dbconnect.php";
+echo "testoawnie";
 $user = "users";
 $news = "news";
 $text = "text";
