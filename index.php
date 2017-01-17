@@ -1,3 +1,19 @@
+
+<HTML>
+<HEAD>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <META http-equiv="Cache-Control" content="no-cache">
+     <meta http-equiv="Description" name="Description" content="">
+     <meta http-equiv="Keywords" name="Keywords" content="">
+     <TITLE>Title</TITLE>
+</HEAD>
+<FRAMESET rows="*,0">
+    <FRAME src="http://lamp.ii.us.edu.pl/~ii292684/PAW/" frameborder="0" noresize>
+    <NOFRAMES>
+       Your browser does not support frames.
+    </NOFRAMES>
+</FRAMESET>
+</HTML>
 <?php
 /*
 Index strony odpowiadający za zaincludowanie plików, które budują stronę.
@@ -14,18 +30,3 @@ include "menuleft.php"; # Dołączenie pliku odpowiadającegoz a boczne - lewe -
 include "center.php"; # Dołączenie  pliku odpowiadającego za środkowe okno treści.
 include "foot.php"; # Dołączenie pliku odpowiadającego za stopkę™.
 ?>
-<HTML>
-<HEAD>
-    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     <META http-equiv="Cache-Control" content="no-cache">
-     <meta http-equiv="Description" name="Description" content="">
-     <meta http-equiv="Keywords" name="Keywords" content="">
-     <TITLE>Title</TITLE>
-</HEAD>
-<FRAMESET rows="*,0">
-    <FRAME src="http://lamp.ii.us.edu.pl/~ii292684/PAW/" frameborder="0" noresize>
-    <NOFRAMES>
-       Your browser does not support frames.
-    </NOFRAMES>
-</FRAMESET>
-</HTML>
