@@ -13,7 +13,7 @@ printf('<html>
 <div id="menu">
 <div id="tresctekst">');
 
-include('install.php');
+require 'install.php';
 if ($_GET["install"] == "")
 {
 printf('
