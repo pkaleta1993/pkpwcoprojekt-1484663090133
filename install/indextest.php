@@ -13,6 +13,7 @@ printf('<html>
 <div id="menu">
 <div id="tresctekst">');
 
+
 if ($_GET["install"] == "")
 {
 printf('
