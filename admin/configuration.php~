@@ -1,0 +1,65 @@
+<?php 
+
+if (isset($_POST['title']) and isset($_POST['ctext']) and isset($_POST['fav']) and isset($_POST['bodyspath']) and isset($_POST['styleapath']) and isset($_POST['path'])) #Jeżeli wszystkie pola zostały wypełnione, to wykonaj poniższe polecenia
+{
+	$file = fopen("../config.php", "w+");
+	$conf = "<?php
+/*
+Ustawienia:
+ - tytułu trony.
+ - faviconu.
+ - połączenia z bazą danych.
+ - ścieżek do styli.
+ - koloru tekstu.
+*/
+
+define('db_database','re'); # Nazwa bazy danych.
+define('db_user','root'); # Użytkownik bazy danych.
+define('db_pass','remedium'); # Hasło bazy danych.
+define('db_server','127.0.0.1'); # Serwer bazy danych.
+".'$bodystyle'."=\"".$_POST['bodyspath']."\"; # Ścieżka do głównych styli, które odpowiadają za ogólny wygląd strony.
+".'$title'."=\"".$_POST['title']."\"; # Tytuł strony.
+".'$text'."=\"".$_POST['ctext']."\"; # Kolor tekstu
+".'$styleaccount'."=\"".$_POST['styleapath']."\"; # Ścieżka do styli, które odpowiadają za wygląd panelu logowania.
+".'$favicon'."=\"".$_POST['fav']."\"; # Ścieżka do faviconu.
+?>";
+fputs($file,$conf);
+fclose($file);
+}
+printf('<div class="tab">
+<a href="?id=configuration&tab=1">Config</a>
+<a href="?id=configuration&tab=2">Ustawienia dodatków</a>
+<a href="?id=configuration&tab=3">Inne</a>
+</div>
+</p>
+<div>
+<h1>Konfiguracja:</h1>
+<form action="" method="post">
+<label>
+<span>Tytuł strony:</span><br />
+<input type="text" name="title" value="'.$title.'"/>
+</label><br />
+<label>
+<span>Kolor tekstu:</span><br />
+<input type="text" name="ctext" value="'.$text.'"/>
+</label><br />
+<label>
+<span>Ścieżka faviconu:</span><br />
+<input type="text" name="fav" value="'.$favicon.'"/>
+</label><br />
+<label>
+<span>URL stylów ogólnych:</span><br />
+<input type="text" name="bodyspath" value="'.$bodystyle.'">
+</label><br />
+<label>
+<span>URL stylów konta:</span><br />
+<input type="text" name="styleapath" value="'.$styleaccount.'">
+</label><br />
+<label>
+<span>Nazwa i ścieżka configa:</span><br />
+<input type="text" name="path" value="../config.php">
+</label><br />
+<input type="submit" class="button" value="Wyślij" />
+</form>
+</div>');
+?>

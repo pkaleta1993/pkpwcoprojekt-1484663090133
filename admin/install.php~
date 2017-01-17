@@ -1,0 +1,71 @@
+<?php
+include "../dbconnect.php";
+$user = "user";
+$news = "news";
+$text = "text";
+$terminarz = "teminarz";
+$install = 1;
+if (!isset($_GET["install"]))
+{
+	$_GET["install"] ="";
+} else if(($_GET["install"] != "yes") and ($_GET["install"] != ""))
+{
+	echo 'Baza danych nie zostala zainstalowana z powodu zle wybranej opcji';
+} else if ($_GET["install"] == "yes") {
+$sql1="create table $user
+		(
+   		id int(10) NOT NULL AUTO_INCREMENT,
+    		login varchar(50) NOT NULL,
+    		password varchar (40) NOT NULL,      
+			mail varchar (40) NOT NULL,                
+			imie varchar (40) NOT NULL,
+			nazwisko varchar (40) NOT NULL,                
+			PRIMARY KEY (id)
+		)";
+		
+$sql2="create table $news		
+		(
+			id int(10) NOT NULL AUTO_INCREMENT,
+			autor varchar(50) NOT NULL,
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tresc text NOT NULL,
+			PRIMARY KEY (id)
+		)";
+$sql3="create table $text		
+		(
+			id int(10) NOT NULL AUTO_INCREMENT,
+			autor varchar(50) NOT NULL,
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tytul tinytext NOT NULL,
+			tresc text NOT NULL,
+			ocena float NOT NULL,
+			glosy smallint NOT NULL,
+			PRIMARY KEY (id)
+		)";
+		
+$sql4="create table $terminarz		
+		(		
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tytul tinytext NOT NULL,
+			miejsce tinytext NOT NULL,
+			opis text NOT NULL
+		)";
+echo "<div id=\"tresctekst\">Tworzenie tabeli $user...\t";
+mysql_query($sql1) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $news...\t";
+mysql_query($sql2) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $text...\t";
+mysql_query($sql3) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $terminarz...\t";
+mysql_query($sql4) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+if($install == 1)
+{
+	printf('<br /><br />Baza danych utworzona poprawnie.</div>');
+} else {
+	printf('<br /><br />Tworzenie bazy nie udalo sie.</div>');
+}
+}
+?>

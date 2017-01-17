@@ -1,0 +1,22 @@
+.tab
+{
+	padding-left: 2%;
+}
+
+
+.tab a
+{
+	
+	display: inline;
+	color: #FFFFFF;
+	background-color: #edd28d;
+	color: #291b00;
+	width: 100px;
+}
+
+#input
+{	
+		
+		background-color: #edd28d;
+		color: #000000;	
+}

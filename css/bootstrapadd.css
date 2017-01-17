@@ -1,0 +1,61 @@
+.btn-blog {
+  color: #fff;
+  background-color: #222222;
+  border-color: #525252;
+}
+.btn-blog:focus,
+.btn-blog.focus {
+  color: #fff;
+  background-color: #111111;
+  border-color: #122b40;
+}
+.btn-blog:hover {
+  color: #fff;
+  background-color: #111111;
+  border-color: #323232;
+}
+.btn-blog:active,
+.btn-blog.active,
+.open > .dropdown-toggle.btn-blog {
+  color: #fff;
+  background-color: #111111;
+  border-color: #323232;
+}
+.btn-blog:active:hover,
+.btn-blog.active:hover,
+.open > .dropdown-toggle.btn-blog:hover,
+.btn-blog:active:focus,
+.btn-blog.active:focus,
+.open > .dropdown-toggle.btn-blog:focus,
+.btn-blog:active.focus,
+.btn-blog.active.focus,
+.open > .dropdown-toggle.btn-blog.focus {
+  color: #fff;
+  background-color: #323232;
+  border-color: #122b40;
+}
+.btn-blog:active,
+.btn-blog.active,
+.open > .dropdown-toggle.btn-blog {
+  background-image: none;
+}
+.btn-blog.disabled:hover,
+.btn-blog[disabled]:hover,
+fieldset[disabled] .btn-blog:hover,
+.btn-blog.disabled:focus,
+.btn-blog[disabled]:focus,
+fieldset[disabled] .btn-blog:focus,
+.btn-blog.disabled.focus,
+.btn-blog[disabled].focus,
+fieldset[disabled] .btn-blog.focus {
+  background-color: #222222;
+  border-color: #525252;
+}
+.btn-blog .badge {
+  color: #222222;
+  background-color: #fff;
+}
+.well {
+	border: 1px solid #36688A;
+	background-color: #222222;
+}

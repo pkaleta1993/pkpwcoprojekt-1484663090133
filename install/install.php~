@@ -1,0 +1,126 @@
+<?php
+include "../dbconnect.php";
+$users = "users";
+$news = "news";
+$text = "text";
+$terminarz = "teminarz";
+$news_komentarze = "news_komentarze";
+$dbre = "re";
+$dbpa = "pa";
+$dbpkt = "pkt";
+$notes = "notes";
+$text_komentarze = "text_komentarze"; 
+$install = 1;
+if (!isset($_GET["install"]))
+{
+	$_GET["install"] ="";
+} else if(($_GET["install"] != "yes") and ($_GET["install"] != ""))
+{
+	echo 'Baza danych nie zostala zainstalowana z powodu zle wybranej opcji';
+} else if ($_GET["install"] == "yes") {
+
+$sql1="create table $dbre.$users
+		(
+   		id int(10) NOT NULL AUTO_INCREMENT,
+    		login varchar(50) NOT NULL,
+    		password varchar (40) NOT NULL, 
+			mail varchar(40) NOT NULL,                
+			name varchar(40) NOT NULL,
+			surname varchar(40) NOT NULL,
+			privileges tinyint NOT NULL, 
+			last_login_d date NOT NULL,
+			last_login_t time NOT NULL,
+			points float NOT NULL,
+			value float NOT NULL,
+			PRIMARY KEY (id)
+		)";
+		
+$sql2="create table $dbre.$news		
+		(
+			id int(10) NOT NULL AUTO_INCREMENT,
+			autor varchar(50) NOT NULL,
+			tytul tinytext NOT NULL,
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tresc text NOT NULL,
+			sr_ocen float NOT NULL,
+			PRIMARY KEY (id)
+		)";
+$sql3="create table $dbre.$text		
+		(
+			id int(10) NOT NULL AUTO_INCREMENT,
+			autor varchar(50) NOT NULL,
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tytul tinytext NOT NULL,
+			tresc mediumtext NOT NULL,
+			sr_ocena float NOT NULL,
+			glosy smallint NOT NULL,
+			PRIMARY KEY (id)
+		)";
+		
+$sql4="create table $dbre.$terminarz		
+		(		
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tytul tinytext NOT NULL,
+			miejsce tinytext NOT NULL,
+			opis text NOT NULL
+		)";
+		
+$sql5="create table $dbre.$news_komentarze		
+		(		
+			i_id int(10) NOT NULL AUTO_INCREMENT,
+			autor varchar(50) NOT NULL,
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tresc text(10000) NOT NULL,
+			id int NOT NULL,
+			PRIMARY KEY (i_id)
+		)";
+		
+$sql6="create table $dbre.$text_komentarze		
+		(	
+			i_id int(10) NOT NULL AUTO_INCREMENT,
+			id int NOT NULL,
+			autor varchar(50) NOT NULL,
+			data date NOT NULL,
+			godzina time NOT NULL,	
+			tresc text(10000) NOT NULL,
+			sr_ocena int NOT NULL,	
+			PRIMARY KEY (i_id)	
+		)";
+		
+		
+$sql_pa1="create table $dbpa.$notes		
+		(		
+			notes text NOT NULL			
+		)";
+		
+echo "<div id=\"tresctekst\">Tworzenie bazy $dbre...\t";
+mysql_query("CREATE DATABASE $dbre") and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $users...\t";
+mysql_query($sql1) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $news...\t";
+mysql_query($sql2) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $text...\t";
+mysql_query($sql3) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $terminarz...\t";
+mysql_query($sql4) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $news_komentarze...\t";
+mysql_query($sql5) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $text_komentarze...\t";
+mysql_query($sql6) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie bazy $dbpa...\t";
+mysql_query("CREATE DATABASE $dbpa") and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+echo "Tworzenie tabeli $notes...\t";
+mysql_query($sql_pa1) and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+mysql_query("CREATE DATABASE $dbpkt") and printf("OK.<br />") or printf("NOT OK. <br />\tPowod - \"".mysql_error()."\"<br />") and $install--;
+if($install == 1)
+{
+	printf('<br /><br />Baza danych utworzona poprawnie.</div>');
+} else {
+	printf('<br /><br />Tworzenie bazy nie udalo sie.</div>');
+}
+}
+?>

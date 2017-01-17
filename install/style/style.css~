@@ -1,0 +1,42 @@
+ body  {
+	background-image:  url('../images/left.png'), url('../images/right.png'), url('../images/pattern.png');
+  	background-repeat: repeat-y, repeat-y, repeat;
+	background-position: left top, right top, left top;
+	left: 0px;
+	top: 0px;
+	}
+
+#menu
+	{ 
+		width: 94%;
+		height: 90%;
+		background-color: #291b00;
+		position: absolute;
+		top: 5%;
+		left: 3%;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+		border-width: medium;
+		font-weight: bold;
+	}
+	
+#tresctekst
+	{
+		position: absolute;
+		left: 0.5%;
+		width: 92%;
+		color: #edd28d;
+	}
+	
+#input
+{	
+		position: absolute;
+		width: 90%;
+		bottom: 10%;
+		left: 5%;
+		background-color: #edd28d;
+		color: #000000;
+}
+	
