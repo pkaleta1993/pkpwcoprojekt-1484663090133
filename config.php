@@ -9,10 +9,10 @@ Ustawienia:
 */
 include "var.php";
 
-define('db_database','[baza]'); # Nazwa bazy danych.
-define('db_user','[uzytkownik]'); # Użytkownik bazy danych.
-define('db_pass','[twoje_haslo]'); # Hasło bazy danych.
-define('db_server','[adres_serwera_bazy_danych]'); # Serwer bazy danych.
+define('db_database','ii292684'); # Nazwa bazy danych.
+define('db_user','ii292684'); # Użytkownik bazy danych.
+define('db_pass','Jg*4KM81=<5pM'); # Hasło bazy danych.
+define('db_server','lamp.ii.us.edu.pl'); # Serwer bazy danych.
 $bodystyle="css/main.css"; # Ścieżka do głównych styli, które odpowiadają za ogólny wygląd strony.
 $bodystylebootstrap="css/bootstrapadd.css"; # Ścieżka do głównych styli, które odpowiadają za ogólny wygląd strony.
 $title="PWCO - Projekt"; # Tytuł strony.
