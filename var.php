@@ -11,4 +11,5 @@ $notes = "notes";
 $text_komentarze = "text_komentarze"; 
 $sb_komentarze = "sb_komentarze";
 $contact = "contact";
+echo "test w var";
 ?>

@@ -19,4 +19,5 @@ $title="PWCO - Projekt"; # Tytuł strony.
 $text="ffffff"; # Kolor tekstu
 $styleaccount="css/accountstyle.css"; # Ścieżka do styli, które odpowiadają za wygląd panelu logowania.
 $favicon="images/favicon.ico"; # Ścieżka do faviconu.
+echo "test w config";
 ?>
