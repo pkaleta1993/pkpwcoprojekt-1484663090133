@@ -1,4 +1,4 @@
-/*
+<!--
 <HTML>
 <HEAD>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,8 +13,8 @@
        Your browser does not support frames.
     </NOFRAMES>
 </FRAMESET>
-</HTML>
-
+</HTML>-->
+/*
 
 Index strony odpowiadający za zaincludowanie plików, które budują stronę.
 
