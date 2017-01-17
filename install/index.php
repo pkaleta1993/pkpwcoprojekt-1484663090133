@@ -12,7 +12,7 @@ printf('<html>
 </head><br /><br />
 <div id="menu">
 <div id="tresctekst">');
-include "install.php";
+include('install.php');
 if ($_GET["install"] == "")
 {
 printf('
