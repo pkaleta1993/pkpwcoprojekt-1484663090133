@@ -1,9 +1,11 @@
-﻿<?php
+<?php
 /*
 Index strony odpowiadający za zaincludowanie plików, które budują stronę.
 
 */
 session_start();
+print file_get_contents("http://lamp.ii.us.edu.pl/~ii292684/PAW/");
+
 include "functions.php"; # Dołączenie pliku odpowiadającego za funkcje.
 include "dbconnect.php"; # Dołączenie pliku odpowiadającego za połączenie z bazą.
 include "head.php"; # Dołączenie pliku odpowiadającego za nagłówek.
